@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'orders',
     'paypal.standard.ipn',
     'payment',
+    'coupons',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +141,8 @@ PAYPAL_TEST = True
 
 # weasyprint settings
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+# redis
+REDIS_HOST = 'localhost'
+REDIS_PORT = '6379'
+REDIS_DB = 1

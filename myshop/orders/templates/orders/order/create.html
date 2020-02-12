@@ -15,8 +15,14 @@ Checkout
                     ${{ item.total_price }}
                 </li>
             {% endfor %}
+            {% if cart.coupon %}
+                <li>
+                    "{{ cart.coupon.code }}" ({{ cart.coupon.discount }}% off)
+                    <span> - ${{ cart.get_discount }}</span>
+                </li>
+            {% endif %}
         </ul>
-        <p> Total: ${{ cart.get_total_price }}</p>
+        <p> Total: ${{ cart.get_total_price_after_discount }}</p>
     </div>
 
     <form action="." method="post" class="order-form">
